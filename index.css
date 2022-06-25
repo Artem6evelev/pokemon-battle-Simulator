@@ -8,11 +8,6 @@
   --yellow-pale: #f2ecd2;
 }
 
-body {
-  box-sizing: border-box;
-  margin: 0 auto;
-}
-
 header {
   color: var(--dark);
   text-align: center;
@@ -20,10 +15,53 @@ header {
 
 main {
   display: grid;
-  grid: 1fr / 1fr 1fr;
-  height: 50%;
-  place-content: center;
   grid-column-gap: 2em;
+}
+
+#playerTeam,
+#enemyTeam,
+.character-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--dark);
+}
+
+#playerTeam {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  justify-self: right;
+}
+
+#enemyTeam {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+  justify-self: left;
+}
+
+.avatar {
+  margin: 0.5em;
+  height: 5em;
+}
+
+.dice-container {
+  display: flex;
+}
+
+.dice,
+.placeholder-dice {
+  border: 1px solid var(--dark);
+  height: 5.5vh;
+  width: 5.5vh;
+}
+
+.dice {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.diceNum {
+  margin: 0;
 }
 
 #actions {
@@ -32,8 +70,70 @@ main {
 
 #actions button {
   padding: 0.5em;
-  border: none;
-  background-color: var(--light);
   border: 1px solid var(--dark);
+  background-color: white;
+  color: var(--dark);
   margin-top: 1em;
+}
+
+.health {
+  font-size: 1.5rem;
+  font-weight: normal;
+  width: 100%;
+  text-align: center;
+}
+
+.health b {
+  font-weight: bold;
+}
+
+.health-bar-outer {
+  height: 2vh;
+  width: 70%;
+  margin: 0 5%;
+  margin-bottom: 2vh;
+  border: 1px solid var(--dark);
+}
+
+.health-bar-outer .health-bar-inner {
+  background: var(--accent-green);
+  height: 100%;
+}
+
+.health-bar-outer .health-bar-inner.injured {
+  background: var(--accent-orange);
+}
+
+.health-bar-outer .health-bar-inner.danger {
+  background: var(--accent-red);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  margin: auto;
+  font-size: 2rem;
+  color: var(--light);
+  justify-content: center;
+}
+
+.modal button {
+  font-size: 1rem;
+  display: block;
+  margin: auto;
+  margin-top: 1em;
+  padding: 0.5em;
+  background-color: var(--accent-red);
+  color: var(--light);
+  border: none;
 }
