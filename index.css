@@ -1,0 +1,39 @@
+:root {
+  --accent-green: #3aaf3e;
+  --accent-orange: #e6ab39;
+  --accent-red: #e63946;
+  --light: #f1faee;
+  --accent-yellow: #f3d250;
+  --dark: #1f1f1f;
+  --yellow-pale: #f2ecd2;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+header {
+  color: var(--dark);
+  text-align: center;
+}
+
+main {
+  display: grid;
+  grid: 1fr / 1fr 1fr;
+  height: 50%;
+  place-content: center;
+  grid-column-gap: 2em;
+}
+
+#actions {
+  text-align: center;
+}
+
+#actions button {
+  padding: 0.5em;
+  border: none;
+  background-color: var(--light);
+  border: 1px solid var(--dark);
+  margin-top: 1em;
+}
